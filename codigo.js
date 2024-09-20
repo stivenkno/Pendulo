@@ -8,7 +8,7 @@ const originY = 50;
 let bobX, bobY;
 let path = [];
 let graph = []; // Almacenará la trayectoria angular en el tiempo
-const graphHeight = canvas.height - 100; // Espacio para el gráfico de la función seno
+const graphHeight = canvas.height-100 ; // Espacio para el gráfico de la función seno
 
 function startPendulum() {
   length = parseFloat(document.getElementById('length').value);
@@ -80,7 +80,7 @@ function drawPendulum() {
 // Función para dibujar la trayectoria
 function drawPath() {
   ctx.beginPath();
-  ctx.strokeStyle = 'rgba(0, 0, 255, 0.5)';
+  ctx.strokeStyle = 'rgba(255, 255, 255, 0.5)';
   ctx.lineWidth = 1;
   for (let i = 0; i < path.length - 1; i++) {
     ctx.moveTo(path[i].x, path[i].y);
@@ -95,7 +95,7 @@ function drawVerticalGraph() {
   const graphWidth = 100; // Ancho de la gráfica (para escalar los ángulos)
 
   ctx.beginPath();
-  ctx.strokeStyle = 'red';
+  ctx.strokeStyle = 'white';
   ctx.lineWidth = 2;
 
   // Dibujar la gráfica en función del tiempo de manera vertical
