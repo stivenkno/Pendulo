@@ -8,7 +8,8 @@ const originY = 50;
 let bobX, bobY;
 let path = [];
 let graph = []; // Almacenará la trayectoria angular en el tiempo
-const graphHeight = canvas.height-100 ; // Espacio para el gráfico de la función seno
+const graphHeight = canvas.height - 100; // Espacio para el gráfico de la función seno
+let animationId; // ID para controlar la animación
 
 function startPendulum() {
   length = parseFloat(document.getElementById('length').value);
@@ -21,7 +22,7 @@ function startPendulum() {
   graph = []; // Reiniciar el gráfico
 
   // Iniciar la animación
-  requestAnimationFrame(updatePendulum);
+  animationId = requestAnimationFrame(updatePendulum);
 }
 
 function updatePendulum() {
@@ -60,7 +61,7 @@ function updatePendulum() {
   }
 
   // Continuar la animación
-  requestAnimationFrame(updatePendulum);
+  animationId = requestAnimationFrame(updatePendulum);
 }
 
 function drawPendulum() {
@@ -115,7 +116,20 @@ function drawVerticalGraph() {
 
 // Función para reiniciar la simulación
 function resetCanvas() {
+  // Detener la animación
+  cancelAnimationFrame(animationId);
+
+  // Limpiar el canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+  // Reiniciar las variables
   path = [];
   graph = [];
+  angleVelocity = 0;
+  angleAcceleration = 0;
+  
+  // Reiniciar los valores de los inputs a sus valores por defecto
+  document.getElementById('length').value = 200;
+  document.getElementById('gravity').value = 9.81;
+  document.getElementById('angle').value = 45;
 }
