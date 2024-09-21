@@ -1,36 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Péndulo Oscilatorio con Trayectoria Vertical</title>
-  <link rel="stylesheet" href="diseño.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Péndulo Oscilatorio con Trayectoria Vertical</title>
+    <link rel="stylesheet" href="diseño.css">
 </head>
+
 <body>
-  <h1>Simulación del Movimiento de un Péndulo</h1>
-  
-  <div class="controls">
-    <label for="length">Longitud (px):</label>
-    <input type="number" id="length" value="200">
-    
-    <label for="gravity">Gravedad (m/s²):</label>
-    <input type="number" id="gravity" value="9.81">
-    
-    <label for="angle">Ángulo Inicial (grados):</label>
-    <input type="number" id="angle" value="45">
-    
-    <button onclick="startPendulum()">Iniciar Simulación</button>
-    <button onclick="resetCanvas()">Reiniciar</button>
-  </div>
-  
-  <canvas id="pendulumCanvas" width="600" height="400"></canvas>
+    <h1>Simulación del Movimiento de un Péndulo Simple</h1>
 
-  <footer>
-    <p>&copy; 2024 Stiven Cano Aguirre & Yeison Jaramillo. Todos los derechos reservados.</p>
-  </footer>
+    <div class="controls">
+        <label for="length">Longitud (px):</label>
+        <input type="number" id="length" value="200">
 
-  
-  
-  <script src="codigo.js"></script>
+        <label for="gravity">Gravedad (m/s²):</label>
+        <input type="number" id="gravity" value="9.81">
+
+        <label for="angle">Ángulo Inicial (grados):</label>
+        <input type="number" id="angle" value="45">
+
+        <button onclick="startPendulum()">Iniciar Simulación</button>
+        <button onclick="resetCanvas()">Reiniciar</button>
+    </div>
+
+    <canvas id="pendulumCanvas" width="600" height="400"></canvas>
+
+    <!-- Contenedor para mostrar los resultados -->
+    <div id="results" style="color: white; margin-top: 20px;"></div>
+
+    <footer>
+        <p>&copy; 2024 Stiven Cano Aguirre & Yeison Jaramillo Carvajal. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="codigo.js"></script>
 </body>
+
 </html>
